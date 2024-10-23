@@ -391,10 +391,21 @@ def get_name():
 #         return jsonify(result.body), 200
 #     else:
 #         return jsonify(result.errors), 400
+# if __name__ == "__main__":
+#     port = int(os.environ.get('PORT', 10000))
+#     app.run(host='0.0.0.0', port=port)
+
+
+# if __name__ == "__main__":
+#     with app.app_context():
+#         db.create_all()
 
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
+    
+    port = int(os.env.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)
 
         # Populate Products table
         # new_Cart = Cart( productID = 2, productName= 'LunaGlow Serum', productQuantity= 3  )
@@ -462,4 +473,4 @@ if __name__ == "__main__":
         # db.session.delete(User)
         # db.commit()
 
-        app.run(debug=True)
+        # app.run(debug=True)
